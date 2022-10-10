@@ -15,9 +15,13 @@ export class ProductsService {
   }
 
   async updateOne(productId: string, updateData: any = {}) {
-    const updatedProduct = await this.productModel.findOneAndUpdate({ _id: productId }, updateData, {
-      new: true
-    });
+    const updatedProduct = await this.productModel.findOneAndUpdate(
+      { _id: productId },
+      updateData,
+      {
+        new: true
+      }
+    );
     return updatedProduct;
   }
 

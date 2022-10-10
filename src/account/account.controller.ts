@@ -1,4 +1,14 @@
-import { Body, Controller, Get, Header, Request, HttpException, HttpStatus, Logger, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Header,
+  Request,
+  HttpException,
+  HttpStatus,
+  Logger,
+  Post
+} from '@nestjs/common';
 import { Public } from '../utils/decorators/public.decorator';
 import { AuthDto } from '../utils/dto';
 import { AccountService } from './account.service';

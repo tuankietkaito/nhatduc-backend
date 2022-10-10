@@ -1,0 +1,60 @@
+Customer
+- _id: string
+- name: string
+- gender: string
+- birthday: Date
+- phone: string
+- address: string
+- totalSpend: number
+
+
+Examniation (Đơn khám mắt)
+- _id: string
+- customer: Customer { }
+- doctor: string
+- eyes: {
+	- sphere - SPH (cầu)
+	- cylinder - CYL (trụ)
+	- axis - AX (trục)
+	- visualAcuityGlasses - VA (with glasses) (thị lực có kính)
+	- visualAcuity - VA (without glasses) (thị lực không kính)
+	- addition - ADD 
+	- pupillaryDistance - PD (Khoảng cách đồng tử)
+	- otherProperties: {
+		+ key: string
+		+ value: string
+	} []
+}
+- glasses: {
+	- sphere - SPH (cầu)
+	- cylinder - CYL (trụ)
+	- axis - AX (trục)
+	- visualAcuityGlasses - VA (with glasses) (thị lực có kính)
+	- visualAcuity - VA (without glasses) (thị lực không kính)
+	- addition - ADD 
+	- pupillaryDistance - PD (Khoảng cách đồng tử)
+	- otherProperties: {
+		+ key: string
+		+ value: string
+	} []
+}
+
+Bill (Đơn bán kính)
+- _id: string
+- customer: Customer { }
+- products: {
+	+ product: Product { }
+	+ quantity: number
+} []
+- total: Number
+- discount: Number (0.03, 0.05, 0.1)
+- paid: Number (Đã trả)
+
+
+Product (Sản phẩm)
+- _id: string
+- name: string
+- code: string (Mã Sản phẩm)
+- description?: string
+- unit: string (Đơn vị tính)
+- price: Number

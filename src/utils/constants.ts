@@ -3,6 +3,12 @@ export enum AccountRole {
   USER = 'USER'
 }
 
+export enum Gender {
+  MALE = 'MALE',
+  FEMALE = 'FEMALE',
+  OTHER = 'OTHER'
+}
+
 export enum HttpResponseStatusCode {
   SUCCESS = 200,
   BAD_REQUEST = 400,
