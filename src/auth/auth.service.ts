@@ -9,11 +9,11 @@ import { AccountRole } from '../utils/constants';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly usersService: AccountService, private jwtService: JwtService) {}
+  constructor(private readonly accountService: AccountService, private jwtService: JwtService) {}
 
   async login(credentials: AuthDto) {
     const { username, password } = credentials;
-    const user = await this.usersService.findOne({ username });
+    const user = await this.accountService.findOne({ username });
     if (!user) throw new HttpException('User not found', HttpStatus.NOT_FOUND);
 
     const matchPassword = await bcrypt.compare(password, user.password);

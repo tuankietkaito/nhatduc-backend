@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types } from 'mongoose';
-import { Gender } from 'src/utils/constants';
+import { Gender } from '../utils/constants';
 
 export type CustomerDocument = Customer & Document;
 
