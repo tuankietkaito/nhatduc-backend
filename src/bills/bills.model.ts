@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types, Schema as MongooseSchema } from 'mongoose';
 import { Type } from 'class-transformer';
 
-import { Product } from '../products/product.model';
+import { Product, ProductSchema } from '../products/product.model';
 import { Customer } from '../customers/customer.model';
 
 export type BillDocument = Bill & Document;
@@ -16,7 +16,7 @@ export class Bill {
   customer: Types.ObjectId | Customer;
 
   @Prop({
-    type: [{ quantity: { type: Number }, product: { type: Types.ObjectId, ref: Product.name } }],
+    type: [{ quantity: { type: Number }, product: { type: ProductSchema } }],
     default: []
   })
   products: { quantity: number; product: Product }[];
